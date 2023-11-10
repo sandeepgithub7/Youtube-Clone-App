@@ -6,15 +6,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: youtube-clone
   template:
     metadata:
       labels:
-        app: my-app
+        app: youtube-clone
     spec:
       containers:
-        - name: my-app
-          image: sevenajay/youtube:latest
+        - name: youtube-clone
+          image: sandeeepdocker7/youtube:latest
           ports:
             - containerPort: 3000  # Your Node.js application should listen on port 3000
 
@@ -26,7 +26,7 @@ metadata:
   name: my-app-service
 spec:
   selector:
-    app: my-app
+    app: youtube-clone
   ports:
     - protocol: TCP
       port: 80  # You can use port 80 here for HTTP traffic
